@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+    <p>
+    <h3>You have been logged out from weather scan API </h3>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'login' %}">Log In Again</a>
+        </small>
+    </div>
+{% endblock content %}

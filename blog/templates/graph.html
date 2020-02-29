@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <title>Weather records</title>
+</head>
+<body>
+  {% autoescape off %}
+  <h3>Rainfall over 10 years by station</h3>
+  {{ fig }}
+  <h3>Mean rainfall over 10 years on map</h3>
+  {{ fig_2 }}
+  {% endautoescape %}
+</body>
+</html>
+
+{% endblock content %}

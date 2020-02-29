@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block content %}
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+      </div>
+      <form action='{% url "predict" %}' method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Predict weather</legend>
+              <input type="file" name="csv_file" id="csv_file" required="True" class="form-control">
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Predict</button>
+          </div>
+      </form>
+      <table style="width:100%">
+        <tr>
+          {% for b in temp.itertuples %}
+          <p>At {{ b.Location }} city</p>
+          <p>Rain probability is {{ b.probability }}</p>
+          {% endfor %}
+        </tr>
+      </table>
+    <p> You may use this file to predict weather</p>
+    </div>
+
+
+
+      <!--
+      <label for="Location_ID">Locations</label>
+      <select type="text" id="Locations_ID" name="Locations_ID">
+        <option value="0">Adelaide</option>
+        <option value="1">Albany</option>
+        <option value="2">Albury</option>
+        <option value="3">AliceSprings</option>
+        <option value="4">BadgerysCreek</option>
+        <option value="5">Ballarat</option>
+        <option value="6">Bendigo</option>
+        <option value="7">Brisbane</option>
+        <option value="8">Cairns</option>
+        <option value="9">Canberra</option>
+        <option value="10">Cobar</option>
+        <option value="11">CoffsHarbour</option>
+        <option value="12">Dartmoor</option>
+        <option value="13">Darwin</option>
+        <option value="14">GoldCoast</option>
+        <option value="15">Hobart</option>
+        <option value="16">Katherine</option>
+        <option value="17">Launceston</option>
+        <option value="18">Melbourne</option>
+        <option value="19">MelbourneAirport</option>
+        <option value="20">Mildura</option>
+        <option value="21">Moree</option>
+        <option value="22">MountGambier</option>
+        <option value="23">MountGinini</option>
+        <option value="24">Newcastle</option>
+        <option value="25">Nhil</option>
+        <option value="26">NorahHead</option>
+        <option value="27">NorfolkIsland</option>
+        <option value="28">Nuriootpa</option>
+        <option value="29">PearceRAAF</option>
+        <option value="30">Penrith</option>
+        <option value="31">Perth</option>
+        <option value="32">PerthAirport</option>
+        <option value="33">Portland</option>
+        <option value="34">Richmond</option>
+        <option value="35">Sale</option>
+        <option value="36">SalmonGums</option>
+        <option value="37">Sydney</option>
+        <option value="38">SydneyAirport</option>
+        <option value="39">Townsville</option>
+        <option value="40">Tuggeranong</option>
+        <option value="41">Uluru</option>
+        <option value="42">WaggaWagga</option>
+        <option value="43">Walpole</option>
+        <option value="44">Watsonia</option>
+        <option value="45">Williamtown</option>
+        <option value="46">Witchcliffe</option>
+        <option value="47">Wollongong</option>
+        <option value="48">Woomera</option>
+      </select> -->
+{% endblock content %}
