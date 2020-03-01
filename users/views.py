@@ -85,9 +85,9 @@ def predict_func(request):
 
         location_dict = pd.read_csv(root_for_files + 'pred_graph.csv')
 
-        # alog_0 = "https://weather-scan.herokuapp.com/api/v1/income_classifier/predict?parent_mlalgorithm=8&version=1.1.1"
+        alog_0 = "https://weather-scan.herokuapp.com/api/v1/income_classifier/predict?parent_mlalgorithm=8&version=1.1.1"
 
-        alog_0 = "http://127.0.0.1:8000/api/v1/income_classifier/predict?parent_mlalgorithm=8&version=1.1.1"
+        # alog_0 = "http://127.0.0.1:8000/api/v1/income_classifier/predict?parent_mlalgorithm=8&version=1.1.1"
 
         location_id = []
         probability = []
