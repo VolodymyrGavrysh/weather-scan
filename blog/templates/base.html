@@ -39,20 +39,21 @@
               <!-- <a class="nav-item nav-link" href="{% url 'blog-home' %}">home</a> -->
               <a class="nav-item nav-link" href="{% url 'blog-about' %}">about</a>
               <a class="nav-item nav-link" href="{% url 'blog-pricing' %}">price</a>
+              <a class="nav-item nav-link" href="{% url 'predict' %}">predict</a>
+              <a class="nav-item nav-link" href="{% url 'future' %}">future</a>
+              <a class="nav-item nav-link" href="{% url 'map' %}">records</a>
+
             </div>
           <!-- Navbar Right Side -->
             <div class="navbar navbar-light mr-auto" style="background-color: #e3f2fd;">
             {% if user.is_authenticated %}
                 <a class="nav-item nav-link" href="{% url 'profile' %}">profile</a>
-                <a class="nav-item nav-link" href="{% url 'predict' %}">predict</a>
 
                 <div class="dropdown">
                   <button class="dropdown-item" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           tools
                   </button>
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="{% url 'map' %}">records</a>
-                    <a class="dropdown-item" href="{% url 'future' %}">future</a>
                     <a class="dropdown-item" href="https://weather-scan.herokuapp.com/api/v1/">api</a>
                     <a class="dropdown-item" href="https://weather-scan.herokuapp.com/api/v1/income_classifier/predict">api_predict</a>
 

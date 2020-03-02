@@ -63,7 +63,7 @@ def profile(request):
 
     return render(request, 'users/profile.html', context)
 
-@login_required
+# @login_required
 def predict_func(request):
     data = {}
     if "GET" == request.method:
