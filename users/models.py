@@ -9,7 +9,7 @@ def user_directory_save_file(instance, file):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    image = models.ImageField(default='default.jpg', upload_to=user_directory_save_file)
+    image = models.ImageField(default='default.jpg', upload_to='staticfiles/')
     file = models.FileField(upload_to=user_directory_save_file, default='default.csv')
 
     def __str__(self):
