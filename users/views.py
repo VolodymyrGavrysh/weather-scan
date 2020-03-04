@@ -13,7 +13,9 @@ import os
 base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 root_for_files = os.path.join(base_dir, 'staticfiles/')
 
-ALGORITM_LINK = "http://127.0.0.1:8000/api/v1/income_classifier/predict?parent_mlalgorithm=8&version=1.1.1"
+# ALGORITM_LINK = "http://127.0.0.1:8000/api/v1/income_classifier/predict?parent_mlalgorithm=8&version=1.1.1"
+
+ALGORITM_LINK = "http://weather-scan.herokuapp.com/api/v1/income_classifier/predict?parent_mlalgorithm=8&version=1.1.1"
 
 def register(request):
     if request.method == 'POST':
