@@ -8,11 +8,15 @@
       <form action='{% url "predict" %}' method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           <fieldset class="form-group">
-              <legend class="border-bottom mb-4">Predict weather</legend>
+              <legend class="border-bottom mb-4">Predict weather from csv file</legend>
               <input type="file" name="csv_file" id="csv_file" required="True" class="form-control">
           </fieldset>
           <div class="form-group">
               <button class="btn btn-outline-info" type="submit">Predict</button>
+              <p>You may use this file to predict weather </p>
+<!--               {% load static %}
+              <a href="{ send_file_csv }">file</a> -->
+              <a href="{{ "../staticfiles/test_48.csv" }}">Download CSV File</a>
           </div>
       </form>
       <table style="width:100%">
@@ -23,11 +27,7 @@
           {% endfor %}
         </tr>
       </table>
-    <p> You may use this file to predict weather</p>
     </div>
-
-
-
       <!--
       <label for="Location_ID">Locations</label>
       <select type="text" id="Locations_ID" name="Locations_ID">

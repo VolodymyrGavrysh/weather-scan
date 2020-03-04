@@ -22,7 +22,6 @@ urlpatterns = [
     path('price/', views.pricing, name='blog-pricing'),
     path('map/', views.show_plotly, name='map'),
     path('future/', views.show_plotly_future, name='future'),
-
     ]
 
     # UserPostListView

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="content-section">
+      <form action='{% url "predict_text" %}' method="POST" enctype="application/json">
+          {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Predict weather with raw data</legend>
+            <input type="text" name="json_text" id="json_text" required="True" class="form-control"
+            value="{{ te }}">
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Predict</button>
+            <p>
+            <p>
+            <h5><span style="background-color: #ffffff;">We predict rain in location with&nbsp;{{ responce_json }}</span></h5>
+            <p></p>
+            <p> Here is the sample of data that usually weather station generate every day.</p>
+            <p>
+              {"Location_ID": 3,
+               "Cloud9am": 3.7053842498945335,
+               "Cloud3pm": 3.7237069359428685,
+               "Humidity9am": 35.0,
+               "Humidity3pm": 33.0,
+               "Pressure9am": 1012.2,
+               "Pressure3pm": 1009.5,
+               "MinTemp": 23.5,
+               "MaxTemp": 35.8,
+               "Temp9am": 29.7,
+               "Temp3pm": 34.9,
+               "Rainfall": 0.0,
+               "Evaporation": 9.622704697893075,
+               "Sunshine": 9.213206202001825,
+               "WindGustDir": 5,
+               "WindGustSpeed": 50.0,
+               "WindDir9am": 2,
+               "WindDir3pm": 4,
+               "WindSpeed9am": 6.0,
+               "WindSpeed3pm": 9.0,
+               "year": 2017,
+               "month": 1,
+               "season": 1}
+        </div>
+    </form>
+    </div>
+{% endblock content %}
