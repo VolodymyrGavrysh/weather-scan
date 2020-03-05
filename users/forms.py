@@ -29,5 +29,3 @@ class PredictForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ['file']
-
-#
